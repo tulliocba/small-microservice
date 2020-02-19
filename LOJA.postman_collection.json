@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "7f37443a-aa87-4695-8da8-218fd53c0e13",
+		"name": "LOJA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LOJA - compras",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"itens\": [\n        {\n            \"id\": 1,\n            \"quantidade\": 1\n        },\n        {\n            \"id\": 2,\n            \"quantidade\": 2\n        }\n    ],\n    \"endereco\": {\n    \t\"rua\": \"Rua da Bahia\",\n    \t\"numero\": \"1265\",\n    \t\"estado\": \"MG\",\n    \t\"cep\": \"123123-12\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/compra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"compra"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FORNECEDOR - infos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/info/MG",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"info",
+						"MG"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EUREKA - apps",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8761/eureka/apps",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8761",
+					"path": [
+						"eureka",
+						"apps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CONFIG SERVER",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/fornecedor/default",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"fornecedor",
+						"default"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ZUUL - routes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5555/actuator/routes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"actuator",
+						"routes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAUTH",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "lojapwd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "loja",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "scope",
+							"value": "web",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "joao",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "joaopwd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8088/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ZUUL - requests",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "4ed53c9f-4b6e-4b08-a0f4-0b68850250dd",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"itens\": [\n        {\n            \"id\": 1,\n            \"quantidade\": 1\n        },\n        {\n            \"id\": 2,\n            \"quantidade\": 2\n        }\n    ],\n    \"endereco\": {\n    \t\"rua\": \"Rua da Bahia\",\n    \t\"numero\": \"1265\",\n    \t\"estado\": \"MG\",\n    \t\"cep\": \"123123-12\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5555/loja/compra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5555",
+					"path": [
+						"loja",
+						"compra"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
