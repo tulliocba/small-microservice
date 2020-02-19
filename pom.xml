@@ -13,8 +13,11 @@
     <modules>
         <module>loja</module>
         <module>fornecedor</module>
+        <module>transportador</module>
         <module>config-server</module>
         <module>eureka-server</module>
+        <module>zuul</module>
+        <module>auth</module>
     </modules>
 
 </project>

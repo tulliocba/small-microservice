@@ -1,6 +1,5 @@
-eureka:
-  client:
-    fetch-registry: false # Not look for others eureka-server
-    register-with-eureka: false # Not register in others servers
-server:
-  port: 8761
+
+server:  port: 8761
+
+eureka:  client:    fetch-registry: false
+    register-with-eureka: false
