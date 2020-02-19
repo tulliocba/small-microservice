@@ -1,10 +1,10 @@
-package com.github.tulliocba.fornecedor.eurekaserver;
+package com.github.tulliocba.configserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EurekaServerApplicationTests {
+class ConfigServerApplicationTests {
 
     @Test
     void contextLoads() {

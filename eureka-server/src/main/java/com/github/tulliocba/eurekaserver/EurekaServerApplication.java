@@ -1,4 +1,4 @@
-package com.github.tulliocba.fornecedor.eurekaserver;
+package com.github.tulliocba.eurekaserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
